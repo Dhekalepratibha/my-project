@@ -1,4 +1,4 @@
-let myNm: string = 'pratibha'
+let myNm: string = 'android'
 let con: boolean = true
 let num = 45
 let dt = Date.now()
