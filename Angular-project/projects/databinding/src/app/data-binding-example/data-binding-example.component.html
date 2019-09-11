@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-6">
+    <input type="button" class="btn btn-primary" (click)="bkCl='red'" value="red">
+    <input type="button" class="btn btn-info" (click)="bkCl='green'" value="green">
+    <input type="button" class="btn btn-warning" (click)="bkCl='blue'" value="blue">
+    <input type="button"  class="btn" value="plus"(click)="wd=wd+1">
+    <input type="button"  class="btn" value="Minus"(click)="wd=wd-1">{{wd}}
+    </div>
+    <div class="col-md-6">
+    <input type="text" [style.background-color]="bkCl" [style.width.px]="wd" [(ngModel)]="val">
+    {{val}}
+    </div>
+</div>

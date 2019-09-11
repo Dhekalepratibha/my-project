@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <p class="alert alert-info">
+        {{alTxt}}
+      </p>
+
+      <p class="alert alert-info">
+        {{alTxt.toUpperCase()}}
+      </p>
+
+      <p class="alert alert-info">
+        {{40*15}}
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="{{typ}}">
+      <input [type]="typ">
+      <input [type]="'text'">
+      <input type="text" [style.border]="'1px solid blue'">
+      <p class="alert" [class.alert-info]="true">some text</p>
+      <p class="alert" [attr.data-hi]="'dtAt'">some text</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" value="Okey" class="btn btn-info"(click)="clkFn($event)">
+      <input type="button" value="Okey" class="btn btn-info"(click)="typ='button'">
+    </div>
+  </div>
+  <app-data-binding-example></app-data-binding-example>
+</div>
