@@ -1,4 +1,13 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter, SimpleChanges, DoCheck } from '@angular/core';
+import {
+  OnChanges,
+   OnInit,
+   AfterContentInit,
+   AfterContentChecked,
+   AfterViewInit,
+   AfterViewChecked,
+   OnDestroy
+  } from '@angular/core';
 import { CardInfo } from './card.domain';
 import { cardEvent } from './my-card.event';
 
@@ -7,7 +16,7 @@ import { cardEvent } from './my-card.event';
   templateUrl: './my-card.component.html',
   styleUrls: ['./my-card.component.css']
 })
-export class MyCardComponent implements OnInit {
+export class MyCardComponent implements OnChanges ,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy {
 
   @Input()
   config : CardInfo
@@ -16,10 +25,6 @@ export class MyCardComponent implements OnInit {
   okey : EventEmitter<cardEvent> =new EventEmitter()
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
   onClk(parent :string){
     const evDt : cardEvent ={
       tmp :Date.now(),
@@ -27,5 +32,31 @@ export class MyCardComponent implements OnInit {
       card : this.config
     }
     this.okey.emit()
+  }
+  ngOnChanges(ch : SimpleChanges){
+   console.log('ngOnchanges',ch)
+  }
+  ngOnInit() {
+    console.log('ngOnInit')
+  }
+
+  ngDoCheck(){
+    console.log('ngDoCheck')
+  }
+
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit')
+  }
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked')
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit')
+  }
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked')
+  }
+  ngOnDestroy(){
+    console.log('ngOnDestroy')
   }
 }
