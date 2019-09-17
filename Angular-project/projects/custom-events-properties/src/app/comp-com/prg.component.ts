@@ -14,7 +14,7 @@ import { Component, OnInit, Input } from '@angular/core';
   </div>
   </div>
   `,
-  styles: []
+  styles: [] 
 })
 export class PrgComponent implements OnInit {
 
