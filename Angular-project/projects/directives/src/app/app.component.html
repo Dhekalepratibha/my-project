@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row" *ngIf="isVs">
+    <div class="col-md-12">
+      <p class="alert alert-info">
+        Angular creates it, renders it, creates and renders its children, 
+        checks it when its data-bound properties change, and destroys it before removing it from the DOM.
+      </p>
+    </div>
+  </div>
+  <ng-template [ngIf]="isVs">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="alert alert-info">
+        Angular creates it, renders it, creates and renders its children, 
+        checks it when its data-bound properties change, and destroys it before removing it from the DOM.
+      </p>
+    </div>
+  </div>
+</ng-template>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" value="Okey" class="btn btn-info" (click) = "isVs =!isVs">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ol>
+        <li *ngFor="let mb of mobiles; let i = index;">{{mb.os}} ==> {{i}}</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row border border-primary" *appUnless="true">
+    <div class="col-md-12">
+      <p class="alert alert-info">
+        Angular creates it, renders it, creates and renders its children, 
+        checks it when its data-bound properties change, and destroys it before removing it from the DOM.
+      </p>
+    </div>
+  </div>
+
+<ng-template [appUnless]="true">
+  <div class="row border border-primary" >
+    <div class="col-md-12">
+      <p class="alert alert-info">
+        Angular creates it, renders it, creates and renders its children, 
+        checks it when its data-bound properties change, and destroys it before removing it from the DOM.
+      </p>
+    </div>
+  </div>
+</ng-template>
+
+<div class="row" [ngclass]="{'border' : true,'border-primary' : isVs}">
+  <div class="col-md-12">
+    <p [ngclass]="{'alert' : true , 'alert-info' : true}">
+      Angular creates it, renders it, creates and renders its children, 
+      checks it when its data-bound properties change, and destroys it before removing it from the DOM.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+   <input type="text" [ngStyle]="{'border':'1 px solid red'}" [appSizer]="200">
+  </div>
+</div>
+</div>
